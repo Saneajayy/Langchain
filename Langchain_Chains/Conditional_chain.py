@@ -6,7 +6,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain.schema.runnable import RunnableParallel, RunnableBranch, RunnableLambda #used to execute parallel chains
 from langchain_core.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
-from typing import Literal
+from typing import Literal 
 
 load_dotenv()
 
