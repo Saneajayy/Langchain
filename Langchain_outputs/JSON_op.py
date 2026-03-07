@@ -16,3 +16,25 @@ llm = HuggingFaceEndpoint(
 
 model = ChatHuggingFace(llm=llm)
 
+parser = JsonOutputParser()
+
+template = PromptTemplate(
+    template='Give me the name,age and city of a fictional Person \n {format_instruction}',
+    input_variables=[],
+    partial_variables={'format_instruction':parser.get_format_instructions()}
+)
+
+#prompt = template.format()
+
+#result = model.invoke(prompt)
+
+#final_result = parser.parse(result.content)
+
+# we can also use chain instead of writing the above three lines.
+
+chain = template | model | parser
+result = chain.invoke({})
+
+
+print(result)
+
