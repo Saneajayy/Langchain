@@ -8,3 +8,5 @@ print(len(docs))
 
 print(docs[0].metadata)
 
+# there are many more PDF based on the usecase.
+
